@@ -1,7 +1,5 @@
 package com.qa.service.repository;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +17,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import com.qa.domain.Account;
 import com.qa.util.JSONUtil;
 
-
+import junit.framework.Assert;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AccountDBRepositoryTest {
@@ -52,25 +50,25 @@ public class AccountDBRepositoryTest {
 		List<Account> accounts = new ArrayList<Account>();
 		accounts.add(new Account("John", "Doe", "1234"));
 		Mockito.when(query.getResultList()).thenReturn(accounts);
-		assertEquals(MOCK_DATA_ARRAY, repo.getAllAccounts());
+		Assert.assertEquals(MOCK_DATA_ARRAY, repo.getAllAccounts());
 	}
 
 	@Test
 	public void testCreateAccount() {
 		String reply = repo.createAccount(MOCK_OBJECT);
-		assertEquals(reply, "{\"message\": \"account has been sucessfully added\"}");
+		Assert.assertEquals(reply, "{\"message\": \"account has been sucessfully added\"}");
 	}
 
 	@Test
 	public void testUpdateAccount() {
 		String reply = repo.updateAccount(1L, MOCK_OBJECT);
-		assertEquals(reply, "{\"message\": \"account sucessfully updated\"}");
+		Assert.assertEquals(reply, "{\"message\": \"account sucessfully updated\"}");
 	}
 
 	@Test
 	public void testDeleteAccount() {
 		String reply = repo.deleteAccount(1L);
-		assertEquals(reply, "{\"message\": \"account sucessfully deleted\"}");
+		Assert.assertEquals(reply, "{\"message\": \"account sucessfully deleted\"}");
 	}
 
 }
