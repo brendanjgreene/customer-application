@@ -14,22 +14,25 @@ public class AccountServiceImpl implements AccountService {
 	private AccountRepository repo;
 
 	public String getAllAccounts() {
-		LOGGER.info("In AccountServiceImpl getAllAccounts ");
+		LOGGER.info("In AccountServiceImpl getAllAccounts");
 		return repo.getAllAccounts();
 	}
 
 	@Override
 	public String addAccount(String account) {
+		LOGGER.info("In AccountServiceImpl addAccounts");
 		return repo.createAccount(account);
 	}
 
 	@Override
 	public String updateAccount(Long id, String account) {
+		LOGGER.info("In AccountServiceImpl updateAccount");
 		return repo.updateAccount(id, account);
 	}
 
 	@Override
 	public String deleteAccount(Long id) {
+		LOGGER.info("In AccountServiceImpl deleteAccount");
 		return repo.deleteAccount(id);
 
 	}

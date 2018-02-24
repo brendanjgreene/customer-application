@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +18,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 import com.qa.domain.Account;
 import com.qa.util.JSONUtil;
 
-import junit.framework.Assert;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AccountDBRepositoryTest {
